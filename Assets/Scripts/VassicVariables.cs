@@ -12,13 +12,34 @@ public class VassicVariables : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("게임시작");       //유니티 디버그에 메세지를 출력
-        
+
+        //Debug.Log("게임시작");       //유니티 디버그에 메세지를 출력
+        if (gold > 50) //만약 gold가 50보다 크다면
+        {
+            Debug.Log("아이템을 구매할 수 있습니다");    //메시지 출력
+
+        }
+        else if (gold > 25)
+        {
+            Debug.Log("일부 아이템을 구매할수 있습니다"); //메시지 출력
+        }
+
+        else
+        {
+            Debug.Log("돈이 부족합니다"); //메시지 출력
+
+        }
+    
+    
+    
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("게임 진행중"); //유니티 디버그에 메세지를 출력
+        if (Input.GetKeyDown(KeyCode.Space)) // Debug.Log("게임 진행중"); //유니티 디버그에 메세지를 출력
+            gold = gold + 10;
+        Debug.Log("현재 골드 : " + gold);
     }
 }
